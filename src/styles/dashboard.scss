@@ -1,0 +1,167 @@
+$gold: #c5a467;
+$dark-bg: #0d0d0d;
+$glass-bg: rgba(255, 255, 255, 0.03);
+
+.dashboard-layout {
+    display: flex;
+    height: 100vh;
+    background-color: $dark-bg;
+    color: white;
+}
+
+.sidebar {
+    width: 260px;
+    background: rgba(0, 0, 0, 0.4);
+    border-right: 1px solid rgba($gold, 0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    .sidebar-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 22px;
+        font-weight: 900;
+        margin-bottom: 50px;
+    }
+
+    .nav-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 12px 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        margin-bottom: 5px;
+        color: rgba(255, 255, 255, 0.6);
+
+        &.active, &:hover {
+            background: rgba($gold, 0.1);
+            color: $gold;
+        }
+    }
+
+    .sidebar-footer {
+        margin-top: auto;
+        padding: 15px;
+        cursor: pointer;
+        display: flex;
+        gap: 10px;
+        color: #ff4d4d;
+        &:hover { opacity: 0.8; }
+    }
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .top-header {
+        height: 70px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 40px;
+    }
+
+    .content-body {
+        padding: 40px;
+        overflow-y: auto;
+    }
+}
+
+.card-glass {
+    background: $glass-bg;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+// Variáveis de Cor
+$gold: #c5a467;
+$dark-card: rgba(20, 20, 20, 0.7);
+$border-color: rgba(197, 164, 103, 0.2);
+
+.generator-container {
+    .custom-input {
+        background: rgba(0, 0, 0, 0.5) !important;
+        border: 1px solid $border-color !important;
+        color: white !important;
+        padding: 12px !important;
+        transition: 0.3s;
+        
+        &:focus {
+            border-color: $gold !important;
+            box-shadow: 0 0 10px rgba($gold, 0.2);
+        }
+    }
+
+    .code-display-section {
+        margin-top: 30px;
+        border: 1px solid $border-color;
+        border-radius: 15px;
+        overflow: hidden;
+        background: $dark-card;
+        backdrop-filter: blur(10px);
+    }
+
+    .tabs-header {
+        display: flex;
+        background: rgba(0, 0, 0, 0.4);
+        border-bottom: 1px solid $border-color;
+
+        button {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 12px 25px;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            border-bottom: 2px solid transparent;
+
+            &:hover {
+                color: white;
+                background: rgba(255, 255, 255, 0.05);
+            }
+
+            &.active {
+                color: $gold;
+                background: rgba($gold, 0.05);
+                border-bottom: 2px solid $gold;
+            }
+        }
+    }
+
+    .tab-content {
+        min-height: 400px;
+        background: rgba(10, 10, 10, 0.4);
+        
+        // Ajuste para o Syntax Highlighter ficar perfeito
+        pre {
+            margin: 0 !important;
+            padding: 20px !important;
+            font-size: 14px !important;
+            font-family: 'Fira Code', 'Courier New', monospace !important;
+        }
+    }
+
+    .preview-mode {
+        .table {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            
+            th { color: $gold; text-transform: uppercase; font-size: 12px; }
+            td { vertical-align: middle; color: rgba(255,255,255,0.8); }
+        }
+    }
+}
